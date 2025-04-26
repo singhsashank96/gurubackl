@@ -292,7 +292,7 @@ const forgetPassword = async (req , res) =>{
 
     const result = JSON.parse(response.body);
     console.log("OTP sent response:", result);
-    res.status(200).json({ message: "OTP sent", verificationId: result.verificationId });
+    res.status(200).json({ message: "OTP sent", data: result });
   });
 
 } catch (error) {
