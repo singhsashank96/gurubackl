@@ -307,9 +307,12 @@ const verifyOtpChangePass = async (req, res) => {
     const { phoneNum, code, verificationId, password } = req.body;
     const token = process.env.MESSAGE_CENTRAL_TOKEN;
 
+
+
+
     const options = {
       method: 'GET',
-      url: `${code}`,
+      url: `https://cpaas.messagecentral.com/verification/v3/validateOtp?countryCode=91&mobileNumber=${phoneNum}&verificationId=${verificationId}&customerId=C-C28443AF9E9248F&code=${code}`,
       headers: {
         authToken: token,
       }
